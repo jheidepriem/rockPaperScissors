@@ -2,12 +2,18 @@
 .body-container {
   background-color: #e0fbfc;
   display: flex;
+  width:100%
+  height: 100%
   margin: 0px
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   font-family: 'Bebas Neue', cursive;
+}
+
+.hidden {
+  display: none;
 }
 
 .main-container {
@@ -33,12 +39,20 @@ h2 {
   color: #f72585;
   margin: 0px;
   justify-content: center;
-  padding-bottom: 2%;
+  padding-bottom: 5%;
+}
+
+h3 {
+  font-size: 25px;
+  color: #f72585;
+  margin: 3px;
+  justify-content: center;
+  padding-bottom: 0%;
 }
 
 p {
-  font-size: 20px;
-  margin: 7%;
+  font-size: 18px;
+  margin: 4%;
   color: #f72585;
   text-align: center;
   display: flex;
@@ -79,12 +93,12 @@ p {
   background-color: #ffc6ff;
   border: 2px solid #0077b6;
   border-radius: 8px;
-  width: 10vw;
+  width: 15vw;
   height: 23vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 0%;
+  justify-content: space-evenly;
+  padding-top: 1%;
   flex-direction: column;
 
 }
@@ -95,16 +109,17 @@ p {
   background-color: #ffc6ff;
   border: 2px solid #0077b6;
   border-radius: 8px;
-  width: 10vw;
+  width: 15vw;
   height: 30vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding-top: 1%;
   flex-direction: column;
+
 }
 
-section {
+.game-section {
   width: 50vw;
   height: 60vh;
   margin: 5%;
