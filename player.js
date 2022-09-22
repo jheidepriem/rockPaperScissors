@@ -5,8 +5,3 @@ class Player {
     this.wins = 0;
   }
 }
-
-takeTurn(player1) {
-  
-
-}
