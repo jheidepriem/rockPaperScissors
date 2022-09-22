@@ -8,16 +8,19 @@
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   </head>
   <body class="body-container">
-    <aside class="left-side">Human<p>💁‍♀️</p></aside>
+    <aside class="left-side">Human<p>💁‍♀️</p><div class="human-score">Wins:</div>
+      <button class="change-game-button hidden" type="submit">New Game?</button>
+    </aside>
     <main class="main-container">
       <h1>ROCK, PAPER, SCISSORS</h1>
       <h2>Choose Your Game!</h2>
+      <h2 class="choose-fighter hidden">Choose Your Fighter!</h2>
       <section class="game-section">
-          <button class="rock-button hidden"><img src="rock.jpg"></button>
-          <button class="paper-button hidden"><img src="paper.jpg"></button>
-          <button class="scissors-button hidden"><img src="scissors.jpg"></button>
-          <button class="dino-button hidden"><img src="dino.jpg"></button>
-          <button class="octo-button hidden"><img src="octo.jpg"></button>
+          <button class="rock-button hidden" type="submit"><img src="rock.jpg"></button>
+          <button class="paper-button hidden" type="submit"><img src="paper.jpg"></button>
+          <button class="scissors-button hidden" type="submit"><img src="scissors.jpg"></button>
+          <button class="dino-button hidden" type="submit"><img src="dino.jpg"></button>
+          <button class="octo-button hidden" type="submit"><img src="octo.jpg"></button>
         <div class="game-1">
           <h3>✌️ Classic ✂️</h3>
           <p>Rock > Scissors</p>
@@ -34,7 +37,8 @@
         </div>
       </section>
     </main>
-    <aside class="right-side">Computer<p>🖥</p></aside>
+    <aside class="right-side">Computer<p>🖥</p>
+      <div class="computer-wins">Wins:</div></aside>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
