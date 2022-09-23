@@ -15,24 +15,24 @@
         <h1>ROCK, PAPER, SCISSORS</h1>
       <div class="main-headers">
         <h2 class="choose-game-h2">Choose Your Game!</h2>
-        <h2 class="choose-fighter-h2 hidden">Choose Your Fighter!</h2>
+        <h2 class="game-message hidden">Choose Your Fighter!</h2>
       </div>
       <section class="game-section">
         <div class="fighter-section">
-          <img src="./assets/dino.jpg" onclick="pickFighter('dino')">
+          <img src="./assets/dino.jpg " onclick="pickFighter('dino')">
           <img src="./assets/rock.jpg" onclick="pickFighter('rock')">
           <img src="./assets/paper.jpg" onclick="pickFighter('paper')">
           <img src="./assets/scissors.jpg" onclick="pickFighter('scissors')">
           <img src="./assets/octo.jpg" onclick="pickFighter('octo')">
         </div>
         <div class="game-1 ">
-          <h3>✌️ Classic ✂️</h3>
+          <h3>Classic</h3>
           <p>Rock > Scissors</p>
           <p>Paper > Rock</p>
           <p>Scissors > Paper</p>
         </div>
         <div class="game-2 ">
-          <h3>🐙 Difficult 🦖</h3>
+          <h3>Difficult</h3>
           <p>Rock > Scissors and Octo</p>
           <p>Paper> Rock and Dino</p>
           <p>Scissors > Paper and Octo</p>
@@ -43,6 +43,8 @@
     </main>
     <aside class="right-side">Computer<p>🖥</p>
       <div class="computer-score">Wins:</div></aside>
+      <script type="text/javascript" src="game.js"></script>
       <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript" src="player.js"></script>
   </body>
 </html>

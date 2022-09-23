@@ -1,9 +1,6 @@
 // -------------->Global Variables---------------------->
 
 var game = new Game();
-var fighterChoice = this.gameType1
-
-
 
 //----------------->Query Selectors--------------------->
 
@@ -17,9 +14,7 @@ var octoButton = document.querySelector(".octo-button")
 var changeGameButton = document.querySelector(".change-game-button")
 var humanScore = document.querySelector('.human-score')
 var computerScore = document.querySelector('.computer-score')
-var humanWinsMessage = document.querySelector('.human-wins')
-var computerWinsMessage = document.querySelector('.computer-wins')
-var drawMessage = document.querySelector('.draw-message')
+var gameMessage = document.querySelector('.game-message')
 var fighterSection = document.querySelector('fighter-section')
 
 
@@ -35,39 +30,63 @@ changeGameButton.addEventListener('click', changeGame);
 //----------------->Dom Handlers------------------------>
 
 function updateMessage() {
-  if(game.isADraw) {
-
+  if(game.isADraw === true) {
+    gameMessage.innerText = `It's a draw!`
   }
 }
 
-// function updateWinner() {
-//   //update winner score
-//
-// }
-//
-// function pickClassicGame() {
-//   //hide games and show fighters
-// }
-//
-// function pickDifficultGame() {
-//   //hide games and show fighters
-// }
-//
-// function onPageLoad() {
-//   //reset window with window eventListener
-// }
-//
+function updateWinnerMessage() {
+  if (game.human.isAWin === true) {
+    gameMessage.innerText = `You Win!`
+  } else if (game.computer.isAWin === true) {
+    gameMessage.innerText = `Computer Wins!`
+  }
+}
+
+function resetFighters() {
+ if (game.draw === true || game.isAWin === true)
+ setTimeout()
+}
+
+
+function updateHumanScore(){
+ if (game.human.isAWin === 1) {
+ }
+}
+
+function updateComputerScore() {
+
+}
+
+function pickClassicGame() {
+  changePage()
+}
+
+function pickDifficultGame() {
+  changePage()
+}
+
 function changePage(show, hide) {
 show.classList.remove('hidden')
 hide.classList.add('hidden')
  }
 
+function onPageLoad() {
+
+}
 
 //---------------->Data Handlers----------------------->
 
+switchTurns() {
+   if (this.turn === this.player1) {
+     this.turn = this.player2;
+   } else if (this.turn === this.player2) {
+     this.turn = this.player1;
+   }
+ }
 
 function pickFighter(fighter) {
-  this.player1Fighter = fighter
+  this.fighter = fighter
   console.log(fighter);
 }
 
@@ -80,8 +99,8 @@ function getComputerFighter() {
 }
 
 
-// //---------------->Misc Functions----------------------->
-//
+//---------------->Misc Functions----------------------->
+
 function getRandomRps(array) {
   return Math.floor(Math.random() * array.length)
 
