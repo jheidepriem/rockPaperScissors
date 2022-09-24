@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+<head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="styles.css">
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  </head>
-  <body class="body-container">
-    <aside class="left-side">Human<p>💁‍♀️</p></aside>
-    <main class="main-container">
-      <h1>ROCK, PAPER, SCISSORS</h1>
-      <h2>Choose Your Game!</h2>
-      <section class="game-section">
-          <button class="rock-button hidden"><img src="rock.jpg"></button>
-          <button class="paper-button hidden"><img src="paper.jpg"></button>
-          <button class="scissors-button hidden"><img src="scissors.jpg"></button>
-          <button class="dino-button hidden"><img src="dino.jpg"></button>
-          <button class="octo-button hidden"><img src="octo.jpg"></button>
-        <div class="game-1">
-          <h3>✌️ Classic ✂️</h3>
-          <p>Rock > Scissors</p>
-          <p>Paper > Rock</p>
-          <p>Scissors > Paper</p>
-        </div>
-        <div class="game-2">
-          <h3>🐙 Difficult 🦖</h3>
-          <p>Rock > Scissors and Octo</p>
-          <p>Paper> Rock and Dino</p>
-          <p>Scissors > Paper and Octo</p>
-          <p>Octo > Paper and Dino</p>
-          <p>Dino > Scissor and Rock</p>
-        </div>
+</head>
+<body class="body-container">
+  <aside class="left-side">Human<p>💁‍♀️</p><div class="human-score">Wins:</div>
+    <button class="change-game-button hidden" type="submit">New Game?</button>
+  </aside>
+  <main class="main-container">
+    <h1>ROCK, PAPER, SCISSORS</h1>
+    <div class="main-headers">
+        <h2 class="choose-game">Choose Your Game!</h2>
+        <h2 class="game-message hidden">Choose Your Fighter!</h2>
+    </div>
+    <div class="fighters-section hidden">
+        <img src="./assets/rock.jpg" onclick="pickFighter('rock')">
+        <img src="./assets/paper.jpg" onclick="pickFighter('paper')">
+        <img src="./assets/scissors.jpg" onclick="pickFighter('scissors')">
+    </div>
+    <div class="difficult-fighters hidden">
+        <img src="./assets/rock.jpg" onclick="pickFighter('rock')">
+        <img src="./assets/paper.jpg" onclick="pickFighter('paper')">
+        <img src="./assets/scissors.jpg" onclick="pickFighter('scissors')">
+        <img src="./assets/octo.jpg" onclick="pickFighter('octo')">
+        <img src="./assets/dino.jpg " onclick="pickFighter('dino')">
+    </div>
+    <section class="game-boxes">
+      <div class="game-1">
+        <h3>Classic</h3>
+        <p>Rock > Scissors</p>
+        <p>Paper > Rock</p>
+        <p>Scissors > Paper</p>
+      </div>
+      <div class="game-2">
+        <h3>Difficult</h3>
+        <p>Rock > Scissors and Octo</p>
+        <p>Paper> Rock and Dino</p>
+        <p>Scissors > Paper and Octo</p>
+        <p>Octo > Paper and Dino</p>
+        <p>Dino > Scissor and Rock</p>
+      </div>
+      </section>
       </section>
     </main>
-    <aside class="right-side">Computer<p>🖥</p></aside>
-    <script type="text/javascript" src="main.js"></script>
+    <aside class="right-side">Computer<p>🖥</p>
+      <div class="computer-score">Wins:</div></aside>
+      <script type="text/javascript" src="game.js"></script>
+      <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript" src="player.js"></script>
   </body>
 </html>
