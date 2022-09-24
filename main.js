@@ -6,11 +6,6 @@ var game = new Game();
 
 var classicGame = document.querySelector(".game-1")
 var difficultGame = document.querySelector(".game-2")
-var rockButton = document.querySelector(".rock-button")
-var paperButton = document.querySelector(".paper-button")
-var scissorsButton = document.querySelector(".scissors-button")
-var dinoButton = document.querySelector(".dino-button")
-var octoButton = document.querySelector(".octo-button")
 var changeGameButton = document.querySelector(".change-game-button")
 var humanScore = document.querySelector('.human-score')
 var computerScore = document.querySelector('.computer-score')
@@ -36,21 +31,21 @@ function updateMessage() {
 }
 
 function updateWinnerMessage() {
-  if (game.human.isAWin === true) {
+  if (game.winner === game.human) {
     gameMessage.innerText = `You Win!`
-  } else if (game.computer.isAWin === true) {
+  } else if (game.winner === game.computer) {
     gameMessage.innerText = `Computer Wins!`
   }
 }
 
 function resetFighters() {
- if (game.draw === true || game.isAWin === true)
+ if ()
  setTimeout()
 }
 
 
 function updateHumanScore(){
- if (game.human.isAWin === 1) {
+ if () {
  }
 }
 
@@ -59,6 +54,13 @@ function updateComputerScore() {
 }
 
 function pickClassicGame() {
+ hide(gameContainer);
+ hide(difficult);
+ show(changeGmBtn);
+ show(resultContainer);
+ newGame.chooseClass();
+ pageIntro.innerText = "Choose Your Fighter!"
+
   changePage()
 }
 
@@ -66,10 +68,6 @@ function pickDifficultGame() {
   changePage()
 }
 
-function changePage(show, hide) {
-show.classList.remove('hidden')
-hide.classList.add('hidden')
- }
 
 function onPageLoad() {
 
@@ -77,13 +75,6 @@ function onPageLoad() {
 
 //---------------->Data Handlers----------------------->
 
-switchTurns() {
-   if (this.turn === this.player1) {
-     this.turn = this.player2;
-   } else if (this.turn === this.player2) {
-     this.turn = this.player1;
-   }
- }
 
 function pickFighter(fighter) {
   this.fighter = fighter
