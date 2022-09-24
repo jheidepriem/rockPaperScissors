@@ -1,4 +1,6 @@
 
+/* --------------------Main---------------------> */
+
 .body-container {
   background-color: white;
   display: flex;
@@ -12,10 +14,6 @@
   font-family: 'Bebas Neue', cursive;
 }
 
-.hidden {
-  display: none;
-}
-
 .main-container {
   display: flex;
   width: 60vw;
@@ -24,6 +22,8 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+/* --------------------Text--------------------------> */
 
 h1 {
   font-size: 60px;
@@ -59,11 +59,48 @@ p {
   flex-direction: column;
 }
 
-.fighter-section {
-  width: 50vw;
+/* -----------------------------Page Layout-----------------> */
+
+img {
+  width: 15%;
+  height: 45%;
+  object-fit: contain;
+}
+
+.human-score {
+  padding-bottom: 15%;
+}
+
+.change-game-button {
+  background-color: #4361ee;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding-top: 7%;
+}
+
+.fighters-section {
+  width: 63vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
+
+.difficult-fighters {
+  width: 60vw;
   height: 50vh;
   display: flex;
+  justify-content: space-evenly;
   flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .right-side {
@@ -94,6 +131,16 @@ p {
   padding-top: 2%;
 }
 
+.game-boxes {
+  width: 50vw;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
 .game-1 {
   font-size: 25px;
   color: #f72585;
@@ -118,7 +165,7 @@ p {
   border: 2px solid #0077b6;
   border-radius: 8px;
   width: 15vw;
-  height: 30vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,28 +175,6 @@ p {
 
 }
 
-.game-section {
-  width: 50vw;
-  height: 60vh;
-  margin: 5%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
-
-.fighter-section {
-  width: 50vw;
-  height: 75vh;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  align-items: center;
-}
-
-img {
-  width: 25%;
-  height: 24%;
-  object-fit: contain;
+.hidden {
+  display: none;
 }

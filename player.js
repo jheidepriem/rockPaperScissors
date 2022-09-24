@@ -4,10 +4,9 @@ class Player {
     this.token = token;
     this.wins = 0;
     this.turn = '';
-  }
-}
+};
 
-takeTurn(gameType) {
+takeTurn(selectedGame) {
   if (newGame.selectedGame === "classic") {
     var fighters = ["rock", "paper", "scissors"];
       newGame.computer.turn =
@@ -16,5 +15,6 @@ takeTurn(gameType) {
     var fighters = ["rock", "paper", "scissors", "dino", "octo"]
     newGame.computer.turn =
       warriors[Math.floor(Math.random() * fighters.length)]
+    }
   }
-}
+};

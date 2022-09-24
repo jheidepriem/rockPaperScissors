@@ -2,10 +2,9 @@ class Game {
   constructor(selectedGame, winner) {
     this.human = new Player("human","🙋‍♀️");
     this.computer = new Player("computer", "🖥");
-    this.selectedGame = "";
-    this.gameInfo = [];
-    this.winner = "";
-    this.isADraw = false;
+    this.selectedGame = ``;
+    this.gameInfo = ``;
+    this.winner = ``;
   }
 
 chooseClassic() {
@@ -53,7 +52,7 @@ playGame() {
   else {
     return (this.winner = this.computer);
   }
-}
+};
 
 addToScores() {
   if (this.winner === this.human) {
@@ -63,4 +62,4 @@ addToScores() {
     this.computer.wins++;
     }
   }
-}
+};
