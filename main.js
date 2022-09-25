@@ -1,9 +1,11 @@
-// -------------->Global Variables---------------------->
+// // -------------->Global Variables---------------------->
 newGame;
+newPlayer;
 
 //----------------->Query Selectors--------------------->
 var mainContainer = document.querySelector(".main-container")
 var humanScore = document.querySelector('.human-score')
+var computerScore = document.querySelector('.computer-score')
 var changeGameButton = document.querySelector(".change-game-button")
 var chooseGameHeading = document.querySelector(".choose-game")
 var gameMessageHeader = document.querySelector(".game-message")
@@ -13,8 +15,6 @@ var resultBox =document.querySelector(".result-box")
 var classicGame = document.querySelector(".game-1")
 var difficultGame = document.querySelector(".game-2")
 var gameBoxes = document.querySelector(".game-boxes")
-var computerScore = document.querySelector('.computer-score')
-
 
 //---------------->Event Listeners---------------------->
 
@@ -22,18 +22,20 @@ window.addEventListener('load', newGame);
 classicGame.addEventListener('click', pickClassicGame);
 difficultGame.addEventListener('click', pickDifficultGame);
 changeGameButton.addEventListener('click', changeGame);
-
+resultBox.addEventListener("click", pickFighter)
 
 //----------------->Event Handlers------------------------>
+
 function newGame() {
   newGame = new Game();
 };
 
 function newPlayer() {
   newPlayer = new Player();
-}
+};
 
 function updateWinnerMessage() {
+  newGame()
   if (game.winner === game.human) {
     gameMessageHeader.innerText = `You Win!`
   } else if (game.winner === game.computer) {
@@ -41,7 +43,9 @@ function updateWinnerMessage() {
   } else {
     gameMessageHeader.innerText = `It's a Draw!`
   }
-}
+  humanScore.innerText = `Wins: ${newGame.human.wins}`;
+  computerScore.innerText = `Wins: ${newGame.computer.wins}`
+};
 
 function pickClassicGame() {
  hide(chooseGameHeading);
@@ -51,7 +55,7 @@ function pickClassicGame() {
  show(changeGameButton);
  show(classicFighterImgs);
  newGame.chooseClassic();
-}
+};
 
 function pickDifficultGame() {
   hide(chooseGameHeading);
@@ -61,7 +65,7 @@ function pickDifficultGame() {
   show(changeGameButton);
   show(difficultFighterImgs);
   newGame.chooseDifficult();
-}
+};
 
 function changeGame() {
   show(chooseGameHeading);
@@ -71,14 +75,22 @@ function changeGame() {
   hide(changeGameButton);
   hide(classicFighterImgs);
   hide(difficultFighterImgs);
-}
+};
 
-function pickFighter(fighter) {
-  var fighters = fighter
-  newGame.human.turn = fighter
-  beginGame()
-  console.log(fighter);
-}
+// function beginGame() {
+//   newGame.computer.takeTurn();
+//   newGame.playGame();
+//   newGame.addtoScores();
+//   playRPS()
+//   setTimeout(pickClassicGame, 2000);
+// };
+
+function pickFighter(event) {
+  newGame()
+newGame.human.turn = event.target.id;
+  beginGame();
+  console.log("hello there!")
+};
 
 function playRPS() {
   hide(classicFighterImgs);
@@ -91,13 +103,7 @@ function playRPS() {
 updateWinnerMessage()
 };
 
-function beginGame() {
-  newGame.computer.takeTurn();
-  newGame.playGame();
-  newGame.addtoScores();
-  playRPS()
-  setTimeout(pickClassicGame, 2000);
-}
+
 
 //---------------->Misc Functions----------------------->
 function show(element) {

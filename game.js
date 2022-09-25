@@ -1,9 +1,8 @@
 class Game {
   constructor(selectedGame, winner) {
-    this.human = new Player("human","🙋‍♀️");
-    this.computer = new Player("computer", "🖥");
+    this.human = new Player(`human`, `🙋‍♀️`);
+    this.computer = new Player(`computer`, `🖥`);
     this.selectedGame = ``;
-    this.gameInfo = ``;
     this.winner = ``;
   }
 
@@ -55,11 +54,13 @@ playGame() {
 };
 
 addToScores() {
-  if (this.winner === this.human) {
-    this.player.wins++;
-  }
-  if (this.winner === this.computer) {
-    this.computer.wins++;
-    }
-  }
+   if (this.winner === this.human) {
+     this.human.wins++;
+   }
+   if (this.winner === this.computer) {
+     this.computer.wins++;
+   }
+ }
 };
+
+// module.exports = Game;
