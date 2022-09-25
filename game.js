@@ -46,7 +46,7 @@ playGame() {
   } else if (this.human.turn === "dino" &&
     this.computer.turn === "rock") {
     return (this.winner = this.human)
-  } else if (this.hum.turn === this.computer.turn) {
+  } else if (this.human.turn === this.computer.turn) {
     return (this.winner = `It's a Draw`)
   }
   else {

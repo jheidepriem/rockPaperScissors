@@ -9,8 +9,10 @@ var chooseGameHeading = document.querySelector(".choose-game")
 var gameMessageHeader = document.querySelector(".game-message")
 var classicFighterImgs = document.querySelector(".fighters-section")
 var difficultFighterImgs = document.querySelector(".difficult-fighters")
+var resultBox =document.querySelector(".result-box")
 var classicGame = document.querySelector(".game-1")
 var difficultGame = document.querySelector(".game-2")
+var gameBoxes = document.querySelector(".game-boxes")
 var computerScore = document.querySelector('.computer-score')
 
 
@@ -71,6 +73,33 @@ function changeGame() {
   hide(difficultFighterImgs);
 }
 
+function pickFighter(fighter) {
+  var fighters = fighter
+  newGame.human.turn = fighter
+  beginGame()
+  console.log(fighter);
+}
+
+function playRPS() {
+  hide(classicFighterImgs);
+  hide(difficultFighterImgs);
+  hide(gameBoxes);
+  hide(changeGameButton);
+  show(resultBox);
+  resultBox.innerHTML = `<img src="./assets/${newGame.human.turn}.jpg">
+  <img src="./assets/${newGame.computer.turn}.jpg"`
+updateWinnerMessage()
+};
+
+function beginGame() {
+  newGame.computer.takeTurn();
+  newGame.playGame();
+  newGame.addtoScores();
+  playRPS()
+  setTimeout(pickClassicGame, 2000);
+}
+
+//---------------->Misc Functions----------------------->
 function show(element) {
   element.classList.remove("hidden");
 };
@@ -78,18 +107,3 @@ function show(element) {
 function hide(element) {
   element.classList.add("hidden");
 };
-
-function pickFighter(fighter) {
-  var fighters = fighter
-  console.log(fighter);
-}
-
-//---------------->Event Handlers----------------------->
-
-
-
-
-
-
-
-//---------------->Misc Functions----------------------->
