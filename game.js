@@ -4,15 +4,15 @@ class Game {
     this.computer = new Player(`computer`, `🖥`);
     this.selectedGame = ``;
     this.winner = ``;
-  }
+};
 
 chooseClassic() {
   this.selectedGame = "classic";
-}
+};
 
 chooseDifficult() {
   this.selectedGame = "difficult";
-}
+};
 
 playGame() {
   if (this.human.turn === "rock" &&
@@ -46,7 +46,7 @@ playGame() {
     this.computer.turn === "rock") {
     return (this.winner = this.human)
   } else if (this.human.turn === this.computer.turn) {
-    return (this.winner = `It's a Draw`)
+    return (this.winner = `It's a Draw!`)
   }
   else {
     return (this.winner = this.computer);
@@ -62,5 +62,3 @@ addToScores() {
    }
  }
 };
-
-// module.exports = Game;

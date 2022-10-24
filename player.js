@@ -11,11 +11,10 @@ takeTurn(selectedGame) {
     var fighters = ["rock", "paper", "scissors"];
       newGame.computer.turn =
         fighters[Math.floor(Math.random() * fighters.length)];
-  }  else if (newgame.selectedGame === "difficult") {
+  }  else if (newGame.selectedGame === "difficult") {
     var fighters = ["rock", "paper", "scissors", "dino", "octo"]
     newGame.computer.turn =
-      warriors[Math.floor(Math.random() * fighters.length)]
+      fighters[Math.floor(Math.random() * fighters.length)]
     }
   }
 };
-// module.exports = Player;

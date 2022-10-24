@@ -11,7 +11,8 @@ var chooseGameHeading = document.querySelector(".choose-game")
 var gameMessageHeader = document.querySelector(".game-message")
 var classicFighterImgs = document.querySelector(".fighters-section")
 var difficultFighterImgs = document.querySelector(".difficult-fighters")
-var resultBox =document.querySelector(".result-box")
+var resultBox = document.querySelector(".result-box")
+var fighterBox = document.querySelector(".fighter-box")
 var classicGame = document.querySelector(".game-1")
 var difficultGame = document.querySelector(".game-2")
 var gameBoxes = document.querySelector(".game-boxes")
@@ -22,7 +23,7 @@ window.addEventListener('load', newGame);
 classicGame.addEventListener('click', pickClassicGame);
 difficultGame.addEventListener('click', pickDifficultGame);
 changeGameButton.addEventListener('click', changeGame);
-resultBox.addEventListener("click", pickFighter)
+fighterBox.addEventListener('click', pickFighter)
 
 //----------------->Event Handlers------------------------>
 
@@ -32,19 +33,6 @@ function newGame() {
 
 function newPlayer() {
   newPlayer = new Player();
-};
-
-function updateWinnerMessage() {
-  newGame()
-  if (game.winner === game.human) {
-    gameMessageHeader.innerText = `You Win!`
-  } else if (game.winner === game.computer) {
-    gameMessageHeader.innerText = `Computer Wins!`
-  } else {
-    gameMessageHeader.innerText = `It's a Draw!`
-  }
-  humanScore.innerText = `Wins: ${newGame.human.wins}`;
-  computerScore.innerText = `Wins: ${newGame.computer.wins}`
 };
 
 function pickClassicGame() {
@@ -71,41 +59,60 @@ function changeGame() {
   show(chooseGameHeading);
   show(classicGame);
   show(difficultGame);
+  show(gameBoxes)
   hide(gameMessageHeader);
+  hide(resultBox)
   hide(changeGameButton);
   hide(classicFighterImgs);
   hide(difficultFighterImgs);
 };
 
-// function beginGame() {
-//   newGame.computer.takeTurn();
-//   newGame.playGame();
-//   newGame.addtoScores();
-//   playRPS()
-//   setTimeout(pickClassicGame, 2000);
-// };
+function updateWinnerMessage() {
+  if (newGame.winner === newGame.human) {
+    gameMessageHeader.innerText = `You Win!`
+  } else if (newGame.winner === newGame.computer) {
+    gameMessageHeader.innerText = `Computer Wins!`
+  } else {
+    gameMessageHeader.innerText = `It's a Draw!`
+  }
+  humanScore.innerText = `Wins: ${newGame.human.wins}`
+  computerScore.innerText = `Wins: ${newGame.computer.wins}`
+};
 
 function pickFighter(event) {
-  newGame()
-newGame.human.turn = event.target.id;
+  newGame.human.turn = event.target.id;
   beginGame();
   console.log("hello there!")
 };
 
-function playRPS() {
-  hide(classicFighterImgs);
-  hide(difficultFighterImgs);
-  hide(gameBoxes);
-  hide(changeGameButton);
+function resetGame() {
+  hide(fighterBox);
   show(resultBox);
-  resultBox.innerHTML = `<img src="./assets/${newGame.human.turn}.jpg">
-  <img src="./assets/${newGame.computer.turn}.jpg"`
-updateWinnerMessage()
+  show(changeGameButton);
+  show(gameMessageHeader)
+  resultBox.innerHTML = ``;
 };
 
+function playRPS() {
+  hide(resultBox);
+  hide(gameBoxes);
+  show(fighterBox);
+  hide(changeGameButton);
+  resultBox.innerHTML = `<img src="./assets/${newGame.human.turn}.jpg" id="${newGame.human.turn}"
+  <img src="./assets/${newGame.computer.turn}.jpg" id="${newGame.computer.turn}">`
+  updateWinnerMessage()
+};
 
+function beginGame() {
+  newGame.computer.takeTurn();
+  newGame.playGame();
+  newGame.addToScores();
+  playRPS()
+  setTimeout(resetGame, 1500);
+};
 
 //---------------->Misc Functions----------------------->
+
 function show(element) {
   element.classList.remove("hidden");
 };
