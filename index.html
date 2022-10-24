@@ -17,18 +17,21 @@
         <h2 class="choose-game">Choose Your Game!</h2>
         <h2 class="game-message hidden">Choose Your Fighter!</h2>
     </div>
+        <section class="result-box hidden"></section>
+        <section class="fighter-box" id="fighter-box">
     <div class="fighters-section hidden">
-        <img src="./assets/rock.jpg" onclick="pickFighter('rock')">
-        <img src="./assets/paper.jpg" onclick="pickFighter('paper')">
-        <img src="./assets/scissors.jpg" onclick="pickFighter('scissors')">
+        <img src="./assets/rock.jpg" id="rock">
+        <img src="./assets/paper.jpg" id="paper">
+        <img src="./assets/scissors.jpg" id="scissors">
     </div>
     <div class="difficult-fighters hidden">
-        <img src="./assets/rock.jpg" onclick="pickFighter('rock')">
-        <img src="./assets/paper.jpg" onclick="pickFighter('paper')">
-        <img src="./assets/scissors.jpg" onclick="pickFighter('scissors')">
-        <img src="./assets/octo.jpg" onclick="pickFighter('octo')">
-        <img src="./assets/dino.jpg " onclick="pickFighter('dino')">
+        <img src="./assets/rock.jpg" id="rock">
+        <img src="./assets/paper.jpg" id="paper">
+        <img src="./assets/scissors.jpg" id="scissors">
+        <img src="./assets/octo.jpg" id="octo">
+        <img src="./assets/dino.jpg" id="dino">
     </div>
+    </section>
     <section class="game-boxes">
       <div class="game-1">
         <h3>Classic</h3>
@@ -49,8 +52,8 @@
     </main>
     <aside class="right-side">Computer<p>🖥</p>
       <div class="computer-score">Wins:</div></aside>
-      <script type="text/javascript" src="game.js"></script>
       <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript" src="game.js"></script>
       <script type="text/javascript" src="player.js"></script>
   </body>
 </html>
